@@ -12,6 +12,14 @@ header {
   padding: 20px;
 }
 
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -26,15 +34,22 @@ header {
   padding: 15px;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
 }
 
 .menu-item h3 {
   margin: 10px 0;
   color: #b22222;
+  font-size: 1.1rem;
 }
 
 .menu-item p {
   margin: 5px 0;
+  font-size: 1rem;
 }
 
 .controls {
@@ -52,6 +67,7 @@ header {
   margin: 0 5px;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 1rem;
 }
 
 .controls span {
@@ -64,4 +80,55 @@ header {
   background: #fff8f0;
   border-top: 3px solid #b22222;
   padding: 20px;
+}
+
+.cart h2 {
+  font-size: 1.5rem;
+}
+
+/* 📱 Mobile-first adjustments */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr 1fr; /* two items per row on tablets */
+  }
+
+  .menu-item h3 {
+    font-size: 1rem;
+  }
+
+  .controls button {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .menu-item {
+    padding: 10px;
+  }
+
+  .controls button {
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
 }
